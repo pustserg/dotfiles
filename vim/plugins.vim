@@ -35,6 +35,7 @@ Plugin 'ludovicchabant/vim-gutentags'
 Plugin 'morhetz/gruvbox'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'airblade/vim-gitgutter'
+Plugin 'junegunn/fzf.vim'
 "Plugin 'Valloric/YouCompleteMe'
 "Plugin 'slashmili/alchemist.vim'
 call vundle#end()

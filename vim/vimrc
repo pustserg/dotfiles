@@ -1,6 +1,8 @@
 "-----VUNDLE INIT----------
 set nocompatible
-so ./plugins.vim
+set rtp+=/usr/local/opt/fzf
+so ~/.vim/plugins.vim
+so /usr/local/opt/fzf/plugin/fzf.vim
 "-----END OF VUNDLE INIT----
 syntax enable
 let mapleader = ','             "Try to use comma as Leader key
@@ -42,14 +44,9 @@ set cursorline
 set cursorcolumn
 set background=dark
 colorscheme Gruvbox
-"set cursorline
 "highlight CursorLine guibg=#303000 ctermbg=238
 "-----------SEARCH----------------
 set incsearch
-nmap <leader>fs :ts<space>
-nmap <leader>f :tag<space>
-nnoremap <leader>. :CtrlPTag<cr>
-
 "-----------SPLIT MANAGEMENT----------------
 nmap <C-J> <C-W><C-J>
 nmap <C-H> <C-W><C-H>
@@ -61,6 +58,11 @@ nmap <leader>ap :tabedit ~/.vim/plugins.vim<cr>
 nmap <leader>q  :NERDTreeToggle<cr>
 nmap <C-R>	:CtrlPBufTag<cr>
 nmap <leader>h :nohl<cr>
+nmap <leader>fs :ts<space>
+nmap <leader>ft :tag<space>
+nnoremap <leader>. :CtrlPTag<cr>
+nmap <leader>f :Files<cr>
+
 
 "----------AUTOCOMMANDS------------
 "Automatically source vimrc file on save
