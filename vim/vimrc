@@ -5,6 +5,7 @@ so ~/.vim/plugins.vim
 so /usr/local/opt/fzf/plugin/fzf.vim
 "-----END OF VUNDLE INIT----
 syntax enable
+filetype plugin indent on
 let mapleader = ','             "Try to use comma as Leader key
 set number			                "Activate line numbers
 set backspace=indent,eol,start
@@ -29,6 +30,12 @@ let g:airline_solarized_bg='dark'
 let g:gutentags_ctags_exclude = ["**/*.min.js", "**/*.min.css", "build", "vendor", ".git", "**/node_modules", "*.vim/bundle/*"]
 let g:loaded_python3_provider=0
 let g:loaded_python2_provider = 1
+let g:NERDTreeWinPos = "right"
+if executable('rg')
+  set grepprg=rg\ --color=never
+  let g:ctrlp_user_command = 'rg %s --files --color=never --glob ""'
+  let g:ctrlp_use_caching = 0
+endif
 "-----------VISUALS----------------
 "set guifont=Source\ Code\ Pro\ Medium:h17
 set guifont=Consolas:h20
@@ -43,6 +50,7 @@ set scrolloff=999
 set cursorline
 set cursorcolumn
 set background=dark
+set autoread "autoreload files after changes
 colorscheme Gruvbox
 "highlight CursorLine guibg=#303000 ctermbg=238
 "-----------SEARCH----------------
@@ -62,8 +70,9 @@ nmap <leader>fs :ts<space>
 nmap <leader>ft :tag<space>
 nnoremap <leader>. :CtrlPTag<cr>
 nmap <leader>f :Files<cr>
-
-
+nmap <leader>r :e %<cr>
+nmap <c-p> :Files<cr>
+au BufRead,BufNewFile *.arb set filetype=ruby
 "----------AUTOCOMMANDS------------
 "Automatically source vimrc file on save
 augroup autosourcing
