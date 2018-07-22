@@ -40,6 +40,7 @@ Plugin 'jremmen/vim-ripgrep'
 Bundle 'djoshea/vim-autoread'
 Bundle 'mtscout6/vim-cjsx'
 Plugin 'tpope/vim-rhubarb'
+Plugin 'mattn/emmet-vim'
 "Plugin 'Valloric/YouCompleteMe'
 "Plugin 'slashmili/alchemist.vim'
 call vundle#end()
